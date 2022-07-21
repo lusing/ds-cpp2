@@ -1,7 +1,18 @@
 #include "bintree.h"
+#include <iostream>
+
+void trans1(TreeNode* pnode) {
+	if (pnode->pLeft != nullptr) {
+		trans1(pnode->pLeft);
+	}
+	std::cout << pnode->value << ' ';
+	if (pnode->pRight != nullptr) {
+		trans1(pnode->pRight);
+	}
+}
 
 void bintree::trans() {
-
+	trans1(this->pRoot);
 }
 
 void insertNode(TreeNode* pnode, int value) {
@@ -30,4 +41,30 @@ void bintree::insert(int value) {
 	else {
 		insertNode(this->pRoot, value);
 	}
+}
+
+int search(TreeNode* pnode, int value) {
+	if (pnode->value == value) {
+		return value;
+	}
+	if (value > pnode->value) {
+		if (pnode->pRight == nullptr) {
+			return -1;
+		}
+		else {
+			return search(pnode->pRight,value);
+		}
+	}
+	else {
+		if (pnode->pLeft == nullptr) {
+			return -1;
+		}
+		else {
+			return search(pnode->pLeft,value);
+		}
+	}
+}
+
+int bintree::find(int value) {
+	return search(this->pRoot, value);
 }

@@ -14,7 +14,9 @@ public:
 
 class bintree
 {
+public:
 	TreeNode* pRoot;
 	void trans();
 	void insert(int value);
+	int find(int value);
 };

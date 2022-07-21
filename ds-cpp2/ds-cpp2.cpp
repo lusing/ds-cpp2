@@ -101,6 +101,13 @@ int main()
 
 	ListNode* pHead2 = pSolution->ReverseList(pHead);
 	Solution::printNode(pHead2);
+
+	auto pBinTree = new bintree();
+	pBinTree->insert(1);
+	pBinTree->insert(10);
+	pBinTree->insert(5);
+	pBinTree->trans();
+	std::cout << pBinTree->find(10);
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
