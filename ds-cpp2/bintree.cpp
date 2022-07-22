@@ -68,3 +68,25 @@ int search(TreeNode* pnode, int value) {
 int bintree::find(int value) {
 	return search(this->pRoot, value);
 }
+
+void erase(TreeNode* pnode, int value) {
+		if (pnode->value == value) {
+			
+		}
+		if (value > pnode->value) {
+			search(pnode->pRight, value);
+			
+		}
+		else {
+			search(pnode->pLeft, value);
+		}
+}
+
+int bintree::del(int value) {
+	if (search(this->pRoot, value) == -1) {
+		return -1;
+	}
+	else {
+
+	}
+}

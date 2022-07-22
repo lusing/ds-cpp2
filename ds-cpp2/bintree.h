@@ -19,4 +19,5 @@ public:
 	void trans();
 	void insert(int value);
 	int find(int value);
+	int del(int value);
 };
